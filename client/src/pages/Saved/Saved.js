@@ -8,71 +8,69 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List } from "../../components/List";
 
 class Saved extends Component {
-  state = {
-    articles: []
-  };
+    state = {
+        articles: []
+    };
 
-  componentDidMount() {
-    this.getSavedArticles();
-  }
+    componentDidMount() {
+        this.getSavedArticles();
+    }
 
-  getSavedArticles = () => {
-    API.getSavedArticles()
-      .then(res =>
-        this.setState({
-          articles: res.data
-        })
-      )
-      .catch(err => console.log(err));
-  };
+    getSavedArticles = () => {
+        API.getSavedArticles()
+        .then(res =>
+            this.setState({
+                articles: res.data
+            })
+        )
+        .catch(err => console.log(err));
+    };
 
-  handleArticleDelete = id => {
-    API.deleteArticle(id).then(res => this.getSavedArticles());
-  };
+    handleArticleDelete = id => {
+        API.deleteArticle(id).then(res => this.getSavedArticles());
+    };
 
-  render() {
-    return (
-      <Container>
-        <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1 className="text-center">
-                <strong>Medical News Today Reader</strong>
-              </h1>
-              <h2 className="text-center">
-                List of saved articles
-              </h2>
-            </Jumbotron>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-12">
-            <Panel title="Saved Articles" icon="download">
-              {this.state.articles.length ? (
-                <List>
-                  {this.state.articles.map(article => (
-                    <Article
-                      key={article.url.slice(-10).slice(0, 6)}
-                      id={article.url.slice(-10).slice(0, 6)}
-                      title={article.title}
-                      url={article.url}
-                      date={article.date}
-                      handleClick={this.handleArticleDelete}
-                      buttonText="Delete Article"
-                      saved
-                    />
-                  ))}
-                </List>
-              ) : (
-                <h2 className="text-center">No Saved Articles</h2>
-              )}
-            </Panel>
-          </Col>
-        </Row>
-        <Footer />
-      </Container>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <Jumbotron>
+                    <h1 className="text-center">
+                        <strong>Medical News Today Reader</strong>
+                    </h1>
+                    <h2 className="text-center">
+                        List of saved articles
+                    </h2>
+                </Jumbotron>
+                <Container>
+                    <Row>
+                        <Col size="md-12">
+                            <Panel title="Saved Articles" icon="download">
+                                {this.state.articles.length ? (
+                                    <List>
+                                    {this.state.articles.map(article => (
+                                    <Article
+                                    key={article.url.slice(-10).slice(0, 6)}
+                                    id={article.url.slice(-10).slice(0, 6)}
+                                    title={article.title}
+                                    url={article.url}
+                                    date={article.date}
+                                    handleClick={this.handleArticleDelete}
+                                    buttonText="Delete Article"
+                                    saved
+                                    />
+                                    ))}
+                                    </List>
+                                ) : (
+                                <h2 className="text-center">No Saved Articles</h2>
+                                )}
+                            </Panel>
+                        </Col>
+                    </Row>
+                    <Footer />
+                </Container>
+            </div>
+        );
+    }
 }
 
 export default Saved;
