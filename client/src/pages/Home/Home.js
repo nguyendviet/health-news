@@ -45,10 +45,10 @@ class Home extends Component {
         <div>
             <Jumbotron>
                 <h1 className="text-center">
-                <strong>Medical News Today Reader</strong>
+                    <strong>Medical News Today Reader</strong>
                 </h1>
                 <h2 className="text-center">
-                Get the lattest &amp; save medical articles.
+                    Get the lattest &amp; save medical articles.
                 </h2>
             </Jumbotron>
             <Container>
