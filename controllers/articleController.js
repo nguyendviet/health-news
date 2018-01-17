@@ -16,10 +16,11 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    const id = req.body.url.slice(-10).slice(0, 6);
     const article = {
-      _id: req.body._id,
-      title: req.body.headline.main,
-      url: req.body.web_url
+      _id: id,
+      title: req.body.title,
+      url: req.body.url
     };
     db.Article
       .create(article)

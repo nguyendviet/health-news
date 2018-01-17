@@ -1,3 +1,13 @@
+.jumbotron {
+    padding-top: 80px;
+    background: url(./bg-health-news.png) no-repeat center center fixed; 
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover;
+    color: white;
+}
+
 .jumbotron h1 {
   font-size: 32px;
 }

@@ -52,8 +52,8 @@ class Saved extends Component {
                 <List>
                   {this.state.articles.map(article => (
                     <Article
-                      key={article._id}
-                      _id={article._id}
+                      key={article.url.slice(-10).slice(0, 6)}
+                      id={article.url.slice(-10).slice(0, 6)}
                       title={article.title}
                       url={article.url}
                       date={article.date}

@@ -27,7 +27,7 @@ class Home extends Component {
         this.setState({
           articles: res.data,
           message: !res.data.length
-            ? "No New Articles Found, Try a Different Query"
+            ? "No new Articles found, please try again."
             : ""
         })
     }
@@ -36,7 +36,7 @@ class Home extends Component {
   };
 
   handleArticleSave = id => {
-    const article = this.state.articles.find(article => article._id === id);
+    const article = this.state.articles.find(article => article.url.slice(-10).slice(0, 6) === id);
     API.saveArticle(article).then(res => this.getArticles());
   };
 
@@ -53,11 +53,9 @@ class Home extends Component {
             </Jumbotron>
             <Container>
                 <Row>
-                <Col size="md-12">
-                    <Panel title="Query" icon="newspaper-o">
-                    <button onClick={() => this.getArticles()}>Get Articles</button>
-                    </Panel>
-                </Col>
+                    <div className="col-md-12 text-center">
+                        <button className="btn btn-success btn-lg" onClick={() => this.getArticles()}>Get Articles</button>
+                    </div>
                 </Row>
                 <Row>
                 <Col size="md-12">
@@ -66,8 +64,8 @@ class Home extends Component {
                         <List>
                         {this.state.articles.map(article => (
                             <Article
-                            key={article.url}
-                            _id={article.url}
+                            key={article.url.slice(-10).slice(0, 6)}
+                            id={article.url.slice(-10).slice(0, 6)}
                             title={article.title}
                             url={article.url}
                             date={article.publishedAt}
