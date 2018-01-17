@@ -9,8 +9,7 @@ class NavBar extends Component {
 
         this.toggleIcon = this.toggleIcon.bind(this);
         this.state = {
-            iconCollapsed: true,
-            menuCollapsed: true
+            iconCollapsed: true
         };
     }
 
@@ -34,10 +33,10 @@ class NavBar extends Component {
                     </div>
                 </button>
 
-                <div className="collapse navbar-collapse" id="nav-content">
+                <div className={this.state.iconCollapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show'} id="nav-content">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <Link to="/saved" className="nav-link">Saved Articles</Link>
+                            <Link to="/saved" className="nav-link" onClick={this.toggleIcon}>Saved Articles</Link>
                         </li>
                     </ul>
                 </div>
