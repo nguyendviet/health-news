@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
-import Panel from "../../components/Panel";
+// import Panel from "../../components/Panel";
+import Card from "../../components/Card";
 import Article from "../../components/Article";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
@@ -44,7 +45,7 @@ class Saved extends Component {
                 <Container>
                     <Row>
                         <Col size="md-12">
-                            <Panel title="Saved Articles" icon="download">
+                            <Card title="Saved Articles" icon="file_download">
                                 {this.state.articles.length ? (
                                     <List>
                                     {this.state.articles.map(article => (
@@ -63,7 +64,7 @@ class Saved extends Component {
                                 ) : (
                                 <h2 className="text-center">No Saved Articles</h2>
                                 )}
-                            </Panel>
+                            </Card>
                         </Col>
                     </Row>
                     <Footer />

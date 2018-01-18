@@ -1,5 +1,6 @@
 nav {
-    background-color:rgba(45, 134, 89, 0.95);
+    background-color:rgba(40, 167, 69, 0.95);
+    font-size: 1.25rem;
 }
 
 img {
@@ -15,6 +16,11 @@ a:hover {
 
 .nav-link {
     color: #cccccc;
+}
+
+.navbar-brand {
+    color: white;
+    padding: 0;
 }
 
 /* clear bootstrap default navbar button border and outline */

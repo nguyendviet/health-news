@@ -1,12 +1,12 @@
-import React from "react";
-import formatDate from "../../utils/formatDate";
-import { ListItem } from "../List";
+import React from 'react';
+import formatDate from '../../utils/formatDate';
+import {ListItem} from '../List';
 
-const Article = ({ title, url, id, date, handleClick, buttonText, saved }) => (
+const Article = ({title, url, id, date, handleClick, buttonText, saved}) => (
   <ListItem>
     <h3>
       <em>{title}</em>{" "}
-      <span className="btn-group pull-right">
+      <span className="btn-group float-right">
         <a className="btn btn-outline-success" href={url} rel="noopener noreferrer" target="_blank">
           View Article
         </a>

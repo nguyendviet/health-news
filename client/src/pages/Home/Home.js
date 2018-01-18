@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
-import Panel from "../../components/Panel";
+// import Panel from "../../components/Panel";
+import Card from "../../components/Card";
 import Article from "../../components/Article";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
@@ -50,34 +51,32 @@ class Home extends Component {
                 <h2 className="text-center">
                     Get the lattest &amp; save medical articles.
                 </h2>
+                <div className="text-center">
+                    <button className="btn btn-success btn-lg" onClick={() => this.getArticles()}>Get Articles</button>
+                </div>
             </Jumbotron>
             <Container>
                 <Row>
-                    <div className="col-md-12 text-center">
-                        <button className="btn btn-success btn-lg" onClick={() => this.getArticles()}>Get Articles</button>
-                    </div>
-                </Row>
-                <Row>
                 <Col size="md-12">
-                    <Panel title="Results">
-                    {this.state.articles.length ? (
-                        <List>
-                        {this.state.articles.map(article => (
-                            <Article
-                            key={article.url.slice(-10).slice(0, 6)}
-                            id={article.url.slice(-10).slice(0, 6)}
-                            title={article.title}
-                            url={article.url}
-                            date={article.publishedAt}
-                            handleClick={this.handleArticleSave}
-                            buttonText="Save Article"
-                            />
-                        ))}
-                        </List>
-                    ) : (
-                        <h2 className="text-center">{this.state.message}</h2>
-                    )}
-                    </Panel>
+                    <Card title="Results" icon="library_books">
+                        {this.state.articles.length ? (
+                            <List>
+                                {this.state.articles.map(article => (
+                                    <Article
+                                    key={article.url.slice(-10).slice(0, 6)}
+                                    id={article.url.slice(-10).slice(0, 6)}
+                                    title={article.title}
+                                    url={article.url}
+                                    date={article.publishedAt}
+                                    handleClick={this.handleArticleSave}
+                                    buttonText="Save Article"
+                                    />
+                                ))}
+                            </List>
+                        ) : (
+                            <h3 className="text-center">{this.state.message}</h3>
+                        )}
+                    </Card>
                 </Col>
                 </Row>
                 <Footer />
