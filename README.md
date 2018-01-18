@@ -1,8 +1,5 @@
 # Health News
 
-https://github.com/nguyendviet/health-news/blob/master/yarn.lock
-
-
 ## Overview
 A full stack (MERN) app that allows users to get top medical articles from Medical News Today and provide options to read or to save to database for later reading.
 
@@ -39,7 +36,7 @@ Start express and react at the same time:
 ```
 $ yarn start
 ```
-If you've done everything correctly, you should see your default brower loading **localhost:3000**, then the app's main page:
+If you've done everything correctly, you should see your default brower loading ```localhost:3000```, then the app's main page:
 
 <img src="https://github.com/nguyendviet/health-news/blob/master/github-photos/health-news-2.png" width="400"/>
 
