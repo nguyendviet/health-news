@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
-// import Panel from "../../components/Panel";
 import Card from "../../components/Card";
 import Article from "../../components/Article";
 import Footer from "../../components/Footer";
