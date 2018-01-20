@@ -23,7 +23,6 @@ class Home extends Component {
   getArticles = () => {
     API.getArticles()
       .then(res => {
-          console.log(res.data);
         this.setState({
           articles: res.data,
           message: !res.data.length
