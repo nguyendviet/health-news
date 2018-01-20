@@ -8,6 +8,8 @@ A full stack (MERN) app that allows users to get top medical articles from Medic
 
 <img src="https://github.com/nguyendviet/health-news/blob/master/github-photos/health-news.png" width="400"/>  <img src="https://github.com/nguyendviet/health-news/blob/master/github-photos/health-news-1.png" width="400"/>
 
+<img src="https://media.giphy.com/media/xULW8pPfMjXxfera3S/giphy.gif" width="400"/>
+
 ### Logic
 * Users click Get Articles button to getarticles from Medical News Today. Users then can choose to view articles on their website or to save articles' links to my database.
 * Users can go to the Saved Articles page to read saved articles or to remove them.
