@@ -6,8 +6,6 @@ A full stack (MERN) app that allows users to get top medical articles from Medic
 ### Demo
 * Heroku: [Health News](https://health-news.herokuapp.com/)
 
-<img src="https://github.com/nguyendviet/health-news/blob/master/github-photos/health-news.png" width="400"/>  <img src="https://github.com/nguyendviet/health-news/blob/master/github-photos/health-news-1.png" width="400"/>
-
 <img src="https://media.giphy.com/media/xULW8pPfMjXxfera3S/giphy.gif" width="800"/>
 
 ### Logic
