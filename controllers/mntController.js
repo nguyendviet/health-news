@@ -3,7 +3,7 @@ const db = require('../models');
 
 // findAll searches the Medical News Today website and returns only the entries we haven't already saved
 module.exports = {
-    findAll: function(req, res) {
+    findAll: (req, res) => {
         const api_key = 'eae0005f518c46ad8d081e00ef91410d';
 
         axios

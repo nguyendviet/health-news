@@ -2,20 +2,20 @@ const db = require('../models');
 
 // Defining methods for the articleController
 module.exports = {
-    findAll: function(req, res) {
+    findAll: (req, res) => {
         db.Article
         .find(req.query)
         .sort({ date: -1 })
         .then(dbArticle => res.json(dbArticle))
         .catch(err => res.status(422).json(err));
     },
-    findById: function(req, res) {
+    findById: (req, res) => {
         db.Article
         .findById(req.params.id)
         .then(dbArticle => res.json(dbArticle))
         .catch(err => res.status(422).json(err));
     },
-    create: function(req, res) {
+    create: (req, res) => {
         const id = req.body.url.slice(-10).slice(0, 6);
         const article = {
         _id: id,
@@ -27,13 +27,13 @@ module.exports = {
         .then(dbArticle => res.json(dbArticle))
         .catch(err => res.status(422).json(err));
     },
-    update: function(req, res) {
+    update: (req, res) => {
         db.Article
         .findOneAndUpdate({ _id: req.params.id }, req.body)
         .then(dbArticle => res.json(dbArticle))
         .catch(err => res.status(422).json(err));
     },
-    remove: function(req, res) {
+    remove: (req, res) => {
         db.Article
         .findById({ _id: req.params.id })
         .then(dbArticle => dbArticle.remove())
