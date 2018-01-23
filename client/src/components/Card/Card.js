@@ -11,6 +11,6 @@ const Card = props => (
             <div className="panel-body">{props.children}</div>
         </div>
     </div>
-);
+)
 
 export default Card;
